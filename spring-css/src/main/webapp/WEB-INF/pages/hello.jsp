@@ -7,13 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="${pageContext.request.contextPath}/resources/css/mui.min.css" rel="stylesheet" type="text/css"/>
     <link href="${pageContext.request.contextPath}/resources/static/style.css" rel="stylesheet" type="text/css"/>
-    <script src="${pageContext.request.contextPath}/resources/js/mui.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/static/script.js"></script>
+    <link href="${pageContext.request.contextPath}/resources/css/flipper.css" rel="stylesheet" type="text/css"/>    
+    
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/css/material-wfont.min.css" rel="stylesheet" type="text/css"/>
+    
+    <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script><!-- ORDER REQUIRED -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script><!-- ORDER REQUIRED -->
+    
+    
+    <script src="${pageContext.request.contextPath}/resources/js/mui.min.js"></script><!-- REQUIRED -->
+    <script src="${pageContext.request.contextPath}/resources/static/script.js"></script><!-- REQUIRED -->
   </head>
   <body>
     <div id="sidedrawer" class="mui--no-user-select">
-      <div id="sidedrawer-brand" class="mui--appbar-line-height mui--text-title">Brand.io</div>
+      <div id="sidedrawer-brand" class="mui--appbar-line-height mui--text-title">Express Football</div>
       <div class="mui-divider"></div>
       <ul>
       	
@@ -57,26 +65,23 @@
       </div>
     </header>
     <div id="content-wrapper">
-      <div class="mui--appbar-height"></div>
-      <div class="mui-container-fluid">
-        <br>
-        <h1>Brand.io</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin volutpat molestie. Nullam id tempor nulla. Aenean sit amet urna et elit pharetra consequat. Aliquam fringilla tortor vitae lectus tempor, tempor bibendum nunc elementum. Etiam ultrices tristique diam, vitae sodales metus bibendum id. Suspendisse blandit ligula eu fringilla pretium. Mauris dictum gravida tortor eu lacinia. Donec purus purus, ornare sit amet consectetur sed, dictum sit amet ex. Vivamus sit amet imperdiet tellus. Quisque ultrices risus a massa laoreet, vitae tempus sem congue. Maecenas nec eros ut lectus vehicula rutrum. Donec consequat tincidunt arcu non faucibus. Duis elementum, ante venenatis lacinia cursus, turpis massa congue magna, sed dapibus felis nibh sed tellus. Nam consectetur non nibh vitae sodales. Pellentesque malesuada dolor nec mi volutpat, eget vehicula eros ultrices.</p>
-        <p>Aenean vehicula tortor a tellus porttitor, id elementum est tincidunt. Etiam varius odio tortor. Praesent vel pulvinar sapien. Praesent ac sodales sem. Phasellus id ultrices massa. Sed id erat sit amet magna accumsan vulputate eu at quam. Etiam feugiat semper imperdiet. Sed a sem vitae massa condimentum vestibulum. In vehicula, quam vel aliquet aliquam, enim elit placerat libero, at pretium nisi lorem in ex. Vestibulum lorem augue, semper a efficitur in, dictum vitae libero. Donec velit est, sollicitudin a volutpat quis, iaculis sit amet metus. Nulla at ante nec dolor euismod mattis cursus eu nisl.</p>
-        <p>Quisque interdum facilisis consectetur. Nam eu purus purus. Curabitur in ligula quam. Nam euismod ligula eu tellus pellentesque laoreet. Aliquam erat volutpat. Curabitur eu bibendum velit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc efficitur lorem sit amet quam porta pharetra. Cras ultricies pellentesque eros sit amet semper.</p>
-      </div>
-
-
-		<div class="mui-container">
-		<c:forEach var="team" items="${listTeam}">
-			<div class="mui-row">
-				<div class="mui-col-md-8 mui--z2">${team.get("name")}</div>
-				<div class="mui-col-md-4 mui--z2">${team.get("title")}</div>
-			</div>
-		</c:forEach>
-		</div>
-		
-		</br>
+      <div id="example-row" class="row">
+            <a href="javascript:void(0)" class="btn btn-default btn-lg btn-block withripple">Material Design Cards<div class="ripple-wrapper"></div></a>
+           
+			<c:forEach var="team" items="${listTeam}">
+			           
+            <div class="col-xs-12 col-md-4 full-card">
+                <div class="flip-card active-card">
+                    <div class="card alert-success">
+                        <h6>${team.get("name")}</h6>
+                    </div>
+                    <div class="well">
+                        <h1>${team.get("title")}</h1>
+                    </div>
+                </div>
+            </div>
+			</c:forEach>             
+        </div>
     </div>
     <footer id="footer">
       <div class="mui-container-fluid">
